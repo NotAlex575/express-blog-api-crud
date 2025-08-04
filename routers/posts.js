@@ -17,12 +17,10 @@ router.post("/", postController.create);
 
 //update
 router.put("/:id", postController.update);
-//scriviamo per testare su postman con il PUT: http://localhost:3000/posts
-
-/*
+//scriviamo per testare su postman con il PUT: http://localhost:3000/posts/1
 
 //delete
-router.delete("/:id", )
-*/
+router.delete("/:id", postController.destroy);
+//scriviamo per testare su postman con il DELETE: http://localhost:3000/posts/1
 
 module.exports = router;
