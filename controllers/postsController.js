@@ -21,11 +21,15 @@ const index = (req, res) => {
 //show
 
 const show = (req, res) => {
+    //prendiamo l'id inserito su postman
     const id = parseInt(req.params.id);
+    //troviamo l'id inserito su postman nei post dell'array
     const post = posts.find(item => item.id === id)
+    //se l'id inserito su postman non è presente nei post dell'array, allora diamo un error 404
     if(!post){
         res.status(404).json({error: "404 not found", message: `Post con id ${id} non presente`});
     }
+    //altrimenti vediamo il post con id inserito su postman
     else{
         res.json(post);
     }
@@ -49,11 +53,15 @@ const update = (req,res) => {
 //delete
 
 const destroy = (req,res) => {
+    //prendiamo l'id inserito su postman
     const id = parseInt(req.params.id);
+    //troviamo l'id inserito su postman nei post dell'array
     const post = posts.find(item => item.id === id);
+    //se l'id inserito su postman non è presente nei post dell'array, allora diamo un error 404
     if(!post){
         res.status(404).json({error: "404 not found", message: `Post con id ${id} non presente`});
     }
+    //altrimenti eliminiamo il post con id inserito su postman
     else{
         posts.splice(posts.indexOf(post), 1);
         res.sendStatus(204);
