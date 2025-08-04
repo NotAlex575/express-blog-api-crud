@@ -4,14 +4,15 @@ const index = (req, res) => {
     res.send("Elenco dei posts");
 }
 
-/*
+
 
 //show
 
-(req, res) => {
+const show = (req, res) => {
     res.send(`Dettaglio del post con id ${req.params.id}`);
 }
 
+/*
 //create
 
 (req,res) => {
@@ -33,5 +34,6 @@ const index = (req, res) => {
 */
 
 module.exports = {
-    index
+    index,
+    show
 }
