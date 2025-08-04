@@ -23,7 +23,12 @@ const index = (req, res) => {
 const show = (req, res) => {
     const id = parseInt(req.params.id);
     const post = posts.find(item => item.id === id)
-    res.json(post);
+    if(!post){
+        res.status(404).json({error: "404 not found", message: `Post con id ${id} non presente`});
+    }
+    else{
+        res.json(post);
+    }
 }
 
 
