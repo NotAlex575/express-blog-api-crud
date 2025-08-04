@@ -32,9 +32,17 @@ const update = (req,res) => {
 //delete
 
 const destroy = (req,res) => {
-    res.send(`Eliminazione del post con id ${req.params.id}`);
+    const id = parseInt(req.params.id);
+    const post = posts.find(item => item.id === id);
+    if(post){
+        posts.splice(posts.indexOf(post), 1);
+        res.sendStatus(204);
+    }
+    else{
+        res.send("valore non trovato...")
+    }
+    console.log(posts);
 }
-
 
 module.exports = {
     index,
