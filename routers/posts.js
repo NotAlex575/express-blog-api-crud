@@ -15,10 +15,11 @@ router.get("/:id", postController.show);
 router.post("/", postController.create);
 //scriviamo per testare su postman con il POST: http://localhost:3000/posts
 
-/*
-
 //update
-router.put("/:id", )
+router.put("/:id", postController.update);
+//scriviamo per testare su postman con il PUT: http://localhost:3000/posts
+
+/*
 
 //delete
 router.delete("/:id", )

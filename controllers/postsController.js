@@ -19,13 +19,14 @@ const create = (req,res) => {
     res.send("Creazione di un nuovo post");
 }
 
-/*
 
 //update
 
-(req,res) => {
+const update = (req,res) => {
     res.send(`Modifica del post con id ${req.params.id}`);
 }
+
+/*
 
 //delete
 
@@ -38,5 +39,6 @@ const create = (req,res) => {
 module.exports = {
     index,
     show,
-    create
+    create,
+    update
 }
