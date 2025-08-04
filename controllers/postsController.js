@@ -51,14 +51,14 @@ const update = (req,res) => {
 const destroy = (req,res) => {
     const id = parseInt(req.params.id);
     const post = posts.find(item => item.id === id);
-    if(post){
-        posts.splice(posts.indexOf(post), 1);
-        res.sendStatus(204);
+    if(!post){
+        res.status(404).json({error: "404 not found", message: `Post con id ${id} non presente`});
     }
     else{
-        res.send("valore non trovato...")
+        posts.splice(posts.indexOf(post), 1);
+        res.sendStatus(204);
+        console.log(posts);
     }
-    console.log(posts);
 }
 
 module.exports = {
