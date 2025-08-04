@@ -6,6 +6,7 @@ const postController = require("../controllers/postsController.js")
 //index
 router.get("/", postController.index);
 //scriviamo per testare su postman con il GET: http://localhost:3000/posts
+//scriviamo per testare su postman con il GET + uso del filter: http://localhost:3000/posts?name=post3
 
 //show
 router.get("/:id", postController.show);

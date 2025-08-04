@@ -3,7 +3,19 @@ const posts = require("../data/postsData.js");
 //index
 
 const index = (req, res) => {
-    res.json(posts);
+    //EXTRA: FILTER
+
+    //recupero il parametro inserito all'interno di postman (in questo caso recupero un nome inserito)
+    const namePost = req.query.name;
+
+    //Creiamo una variabile che inizialmente conterrà tutti i post presenti nell’array.
+    let filteredPosts = posts;
+
+    //vediamo se si trova il name nell'array di oggetti posts
+    if(namePost){
+        filteredPosts = posts.filter(post => post.name.toLocaleLowerCase().includes(namePost.toLocaleLowerCase()));
+    }
+    res.json(filteredPosts);
 }
 
 //show
