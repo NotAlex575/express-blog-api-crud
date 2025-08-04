@@ -1,29 +1,23 @@
 const express = require("express");
 const router = express.Router();
 
-//index
-router.get("/", (req, res) => {
-    res.send("Elenco dei posts");
-})
+const postController = require("../controllers/postsController.js")
 
+//index
+router.get("/", postController.index);
+
+/*
 //show
-router.get("/:id", (req, res) => {
-    res.send(`Dettaglio del post con id ${req.params.id}`);
-})
+router.get("/:id", )
 
 //create
-router.post("/", (req,res) => {
-    res.send("Creazione di un nuovo post");
-})
+router.post("/", )
 
 //update
-router.put("/:id", (req,res) => {
-    res.send(`Modifica del post con id ${req.params.id}`);
-})
+router.put("/:id", )
 
 //delete
-router.delete("/:id", (req,res) => {
-    res.send(`Eliminazione del post con id ${req.params.id}`)
-})
+router.delete("/:id", )
+*/
 
 module.exports = router;
