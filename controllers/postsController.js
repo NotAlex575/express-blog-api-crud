@@ -1,10 +1,10 @@
+const posts = require("../data/postsData.js");
+
 //index
 
 const index = (req, res) => {
-    res.send("Elenco dei posts");
+    res.json(posts);
 }
-
-
 
 //show
 

@@ -30,3 +30,5 @@ const posts = [
         description: "questo è il 6 post"
     }
 ]
+
+module.exports = posts;
