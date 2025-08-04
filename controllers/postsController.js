@@ -12,12 +12,14 @@ const show = (req, res) => {
     res.send(`Dettaglio del post con id ${req.params.id}`);
 }
 
-/*
+
 //create
 
-(req,res) => {
+const create = (req,res) => {
     res.send("Creazione di un nuovo post");
 }
+
+/*
 
 //update
 
@@ -35,5 +37,6 @@ const show = (req, res) => {
 
 module.exports = {
     index,
-    show
+    show,
+    create
 }
