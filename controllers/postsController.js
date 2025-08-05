@@ -36,10 +36,22 @@ const show = (req, res) => {
 }
 
 
-//create
+//store
 
 const create = (req,res) => {
-    res.send("Creazione di un nuovo post");
+    //nuovo id
+    const newID = posts[posts.length - 1].id + 1;
+
+    //recupero i dati in posts
+    const {name, description} = req.body;
+
+    //creo il nuovo oggetto
+    const newPost = {
+        id: newID,
+        name,
+        description
+    }
+    console.log(newPost);
 }
 
 
