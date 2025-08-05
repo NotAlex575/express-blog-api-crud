@@ -51,6 +51,10 @@ const create = (req,res) => {
         name,
         description
     }
+    posts.push(newPost);
+
+    res.send("Nuovo post creato! ");
+    res.status(201).json(newPost);
     console.log(newPost);
 }
 
