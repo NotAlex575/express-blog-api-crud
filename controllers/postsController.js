@@ -62,7 +62,24 @@ const create = (req,res) => {
 //update
 
 const update = (req,res) => {
-    res.send(`Modifica del post con id ${req.params.id}`);
+    //prendiamo l'id inserito su postman
+    const id = parseInt(req.params.id);
+    //troviamo l'id inserito su postman nei post dell'array
+    const post = posts.find(item => item.id === id);
+    //se l'id inserito su postman non è presente nei post dell'array, allora diamo un error 404
+    if(!post){
+        res.status(404).json({error: "404 not found", message: `Post con id ${id} non presente`});
+    }
+    //altrimenti eliminiamo il post con id inserito su postman
+    else{
+        //recupero i dati in posts
+        const {name, description} = req.body;
+
+        post.name = name;
+        post.description = description;
+
+        res.status(201).json(posts);
+    }
 }
 
 
