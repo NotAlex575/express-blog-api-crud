@@ -5,7 +5,7 @@ const port = 3000;
 app.use(express.static("public"));
 
 //body parser json per recuperare le informazioni
-//dal body di una richiesta
+//dal body di una richiesta su postman
 app.use(express.json());
 
 const postsRouter = require("./routers/posts.js")
