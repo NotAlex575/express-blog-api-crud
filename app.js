@@ -8,13 +8,18 @@ app.use(express.static("public"));
 //dal body di una richiesta su postman
 app.use(express.json());
 
-const postsRouter = require("./routers/posts.js")
+
+const postsRouter = require("./routers/posts.js");
+const errorsHandler = require("./middlewares/errorsHandler.js");
 
 app.get("/", (req,res) => {
     res.send("Benvenuto nell'app dei posts!");
 })
 
 app.use("/posts", postsRouter);
+
+//utilizzo globalmente il middleware errorsHandler
+app.use(errorsHandler);
 
 app.listen(port, () => {
     console.log(`Server in ascolto sulla porta ${port}`);
