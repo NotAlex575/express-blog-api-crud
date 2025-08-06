@@ -5,7 +5,10 @@ const posts = require("../data/postsData.js");
 const index = (req, res) => {
     //EXTRA: FILTER
 
-    Pippo.length();
+    //esempio test middleware errorsHandler (per testare cancellare il commento sotto)
+    //Pippo.length();
+
+    
     //recupero il parametro inserito all'interno di postman (in questo caso recupero un nome inserito)
     const namePost = req.query.name;
 
