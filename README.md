@@ -22,7 +22,7 @@ Implementare un filtro di ricerca nella index che mostri solo i post che hanno u
 In Show e Destroy, controllare se il parametro si riferisce ad un post esistente, in caso contrario, rispondere con uno stato 404 e un messaggio d’errore, sempre in formato JSON.
 
 
-_______________________________________________________________
+__________________________________________________________
 
 Express Blog - API CRUD (parte 2)
  
@@ -58,3 +58,14 @@ Ripetiamo il procedimento per la rotta di Update, in modo da avere la possibilit
 ,
 Quelli del giorno prima, se non già fatti,
 In Update, controllare se il parametro si riferisce ad un post esistente, in caso contrario, rispondere con uno stato 404 e un messaggio d’errore, sempre in formato JSON.
+
+__________________________________________________________
+
+Express Blog - Middlewares
+
+
+Esercizio
+Dopo aver completato tutte le operazioni CRUD, completiamo le nostre API inserendo un middleware per la gestione delle rotte non registrate e uno per la gestione degli errori.
+
+Se viene chiamato un endpoint inesistente, un middleware dovrà rispondere un messaggio e uno status appropriato.
+Se viene generato un errore, un middleware si occuperà di rispondere con un messaggio e uno status appropriato.
